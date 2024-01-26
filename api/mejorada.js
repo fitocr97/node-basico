@@ -1,5 +1,6 @@
 const express = require('express') //framework express
 const mongoose = require('mongoose')
+const user = require('./user.controller')
 //const user = require('./user.controller')
 const app = express()
 const port = 3000
