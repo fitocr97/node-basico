@@ -1,17 +1,20 @@
+const Users = requiere('./User')
+
 const User = {
-    list: (req, res) => {
-        res.status(200).send('hola usuario')
+    list: async (req, res) => {
+        const users = Users.find()
+        res.status(200).send(users)
     },
-    get: (req,res) =>{
+    get: async (req,res) =>{
         res.status(200).send('este es un usuario')
     },
-    create: (req, res) =>{
+    create: async (req, res) =>{
         res.status(201).send('creando usuario')
     },
-    update: (req, res) => {
+    update:async  (req, res) => {
         res.status(204).send('actualizando usuario')
     },
-    destroy: (req, res) => {
+    destroy: async  (req, res) => {
         res.status(204).send('eliminado usuario')
     }
 }

@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
+require('dotenv').config();
+// Accede a las variables de entorno
+const dbPassword = process.env.DB_PASSWORD;
+const dbUser = process.env.DB_USER;
 
-mongoose.connect('mongodb+srv://fitocr:Mfigaromora97@cluster0.rihd75b.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect(`mongodb+srv://${dbUser}:${dbPassword}@cluster0.rihd75b.mongodb.net/?retryWrites=true&w=majority`)
 
 const User = mongoose.model('User', {
     username: String,
@@ -22,7 +26,7 @@ const buscarTodo = async () => {
     console.log(users)
 }
 
-buscarTodo()
+//buscarTodo()
 
 //get one
 const buscar = async () => {
